@@ -329,7 +329,7 @@ public class GitlabHTTPRequestor {
             if (type != null) {
                 return GitlabAPI.MAPPER.readValue(data, type);
             } else if (instance != null) {
-                return GitlabAPI.MAPPER.readerForUpdating(instance).readValue(data);
+                return GitlabAPI.MAPPER.readerForUpdating(instance).<T>readValue(data);
             } else {
                 return null;
             }

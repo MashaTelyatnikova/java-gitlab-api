@@ -35,9 +35,9 @@ public class GitlabAPITest {
         } catch (GitlabAPIException e) {
             final String message = e.getMessage();
             if (!message.equals("{\"message\":\"401 Unauthorized\"}")) {
-                throw new AssertionError("Expected an unauthorized message", e);
+                throw new AssertionError("Expected an unauthorized message");
             } else if(e.getResponseCode() != 401) {
-                throw new AssertionError("Expected 401 code", e);
+                throw new AssertionError("Expected 401 code");
             }
         }
     }
